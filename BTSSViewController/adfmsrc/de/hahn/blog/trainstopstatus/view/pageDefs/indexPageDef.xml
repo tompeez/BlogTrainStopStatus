@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="indexPageDef" Package="de.hahn.blog.trainstopstatus.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="startstop" Type="java.lang.Integer"/>
+    </variableIterator>
+    <taskFlow id="demotrainbtf1" taskFlowId="/WEB-INF/demo-train-btf.xml#demo-train-btf" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding" Refresh="ifNeeded">
+      <parameters>
+        <parameter id="startview" value="#{bindings.startstop1.inputValue}"/>
+      </parameters>
+    </taskFlow>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="variables" id="startstop1">
+      <AttrNames>
+        <Item Value="startstop"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="demo-train-btf">
+    <default-activity>init</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__7">
+      <name>startview</name>
+      <value>#{pageFlowScope.startview}</value>
+    </input-parameter-definition>
+    <managed-bean id="__13">
+      <managed-bean-name>TrainStopBean</managed-bean-name>
+      <managed-bean-class>de.hahn.blog.trainstopstatus.view.beans.TrainStopBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="stop1">
+      <page>/stop1.jsff</page>
+      <train-stop>
+        <sequential>false</sequential>
+      </train-stop>
+    </view>
+    <view id="stop2">
+      <page>/stop2.jsff</page>
+      <train-stop>
+        <sequential>false</sequential>
+      </train-stop>
+    </view>
+    <view id="stop3">
+      <page>/stop3.jsff</page>
+      <train-stop>
+        <sequential>false</sequential>
+      </train-stop>
+    </view>
+    <view id="stop4">
+      <page>/stop4.jsff</page>
+      <train-stop>
+        <sequential>false</sequential>
+      </train-stop>
+    </view>
+    <view id="stop5">
+      <page>/stop5.jsff</page>
+      <train-stop>
+        <sequential>false</sequential>
+      </train-stop>
+    </view>
+    <router id="startview">
+      <case id="__8">
+        <expression>#{pageFlowScope.startview eq 1}</expression>
+        <outcome>stop1</outcome>
+      </case>
+      <case id="__9">
+        <expression>#{pageFlowScope.startview eq 2}</expression>
+        <outcome>stop2</outcome>
+      </case>
+      <case id="__10">
+        <expression>#{pageFlowScope.startview eq 3}</expression>
+        <outcome>stop3</outcome>
+      </case>
+      <case id="__11">
+        <expression>#{pageFlowScope.startview eq 4}</expression>
+        <outcome>stop4</outcome>
+      </case>
+      <case id="__12">
+        <expression>#{pageFlowScope.startview eq 5}</expression>
+        <outcome>stop5</outcome>
+      </case>
+      <default-outcome>stop1</default-outcome>
+    </router>
+    <method-call id="init">
+      <method>#{pageFlowScope.TrainStopBean.onInitTrain}</method>
+      <outcome>
+        <fixed-outcome>go</fixed-outcome>
+      </outcome>
+    </method-call>
+    <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>startview</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>stop1</from-outcome>
+        <to-activity-id>stop1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>stop2</from-outcome>
+        <to-activity-id>stop2</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>stop3</from-outcome>
+        <to-activity-id>stop3</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>stop4</from-outcome>
+        <to-activity-id>stop4</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome>stop5</from-outcome>
+        <to-activity-id>stop5</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__14">
+      <from-activity-id>init</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome>go</from-outcome>
+        <to-activity-id>startview</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
