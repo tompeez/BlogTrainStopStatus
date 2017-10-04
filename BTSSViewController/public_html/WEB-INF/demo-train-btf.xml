@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="demo-train-btf">
-    <default-activity>init</default-activity>
+    <default-activity>startview</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
@@ -12,7 +12,7 @@
     <managed-bean id="__13">
       <managed-bean-name>TrainStopBean</managed-bean-name>
       <managed-bean-class>de.hahn.blog.trainstopstatus.view.beans.TrainStopBean</managed-bean-class>
-      <managed-bean-scope>pageFlow</managed-bean-scope>
+      <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <view id="stop1">
       <page>/stop1.jsff</page>
@@ -67,12 +67,6 @@
       </case>
       <default-outcome>stop1</default-outcome>
     </router>
-    <method-call id="init">
-      <method>#{pageFlowScope.TrainStopBean.onInitTrain}</method>
-      <outcome>
-        <fixed-outcome>go</fixed-outcome>
-      </outcome>
-    </method-call>
     <train/>
     <control-flow-rule id="__1">
       <from-activity-id>startview</from-activity-id>
@@ -95,13 +89,6 @@
       <control-flow-case id="__6">
         <from-outcome>stop5</from-outcome>
         <to-activity-id>stop5</to-activity-id>
-      </control-flow-case>
-    </control-flow-rule>
-    <control-flow-rule id="__14">
-      <from-activity-id>init</from-activity-id>
-      <control-flow-case id="__15">
-        <from-outcome>go</from-outcome>
-        <to-activity-id>startview</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>
