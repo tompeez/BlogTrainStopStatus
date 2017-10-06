@@ -17,31 +17,31 @@
     <view id="stop1">
       <page>/stop1.jsff</page>
       <train-stop>
-        <sequential>false</sequential>
+        <sequential>true</sequential>
       </train-stop>
     </view>
     <view id="stop2">
       <page>/stop2.jsff</page>
       <train-stop>
-        <sequential>false</sequential>
+        <sequential>true</sequential>
       </train-stop>
     </view>
     <view id="stop3">
       <page>/stop3.jsff</page>
       <train-stop>
-        <sequential>false</sequential>
+        <sequential>true</sequential>
       </train-stop>
     </view>
     <view id="stop4">
       <page>/stop4.jsff</page>
       <train-stop>
-        <sequential>false</sequential>
+        <sequential>true</sequential>
       </train-stop>
     </view>
     <view id="stop5">
       <page>/stop5.jsff</page>
       <train-stop>
-        <sequential>false</sequential>
+        <sequential>true</sequential>
       </train-stop>
     </view>
     <router id="startview">

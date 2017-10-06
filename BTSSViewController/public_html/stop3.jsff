@@ -10,7 +10,7 @@
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                 <!-- Content -->
                 <af:outputText value="Stop 3" id="ot1" inlineStyle="font-size:x-large;"/>
-                <af:outputText value="#{pageFlowScope.TrainStopBean.initStatus}" id="ot2" visible="false"/>
+                <af:outputText value="#{TrainStopBean.initStatus}" id="ot2" visible="false"/>
                 <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="t1"/>
                 <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="tbb1"/>
             </af:gridCell>
